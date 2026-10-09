@@ -1,0 +1,327 @@
+:root {
+  /* Colors */
+  --primary-color: #6c63ff;
+  --primary-hover: #5a52e0;
+
+  --secondary-color: #f5f6fa;
+
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+
+  --text-color: #222831;
+  --text-light: #6b7280;
+
+  --white-color: #ffffff;
+  --border-color: rgba(0,0,0,.2);
+
+  /* Background */
+  --body-bg: linear-gradient(
+    135deg,
+    #eef2ff,
+    #dbeafe
+  );
+
+  --card-bg: #ffffff;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    /* errors */
+    --error: #ef4444;
+    --error-light: #fee2e2;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Spacing */
+  --padding-sm: 10px;
+  --padding-md: 15px;
+  --padding-lg: 25px;
+
+  /* Transition */
+  --transition: 0.3s ease;
+
+  --btn-text: #475569;
+
+  --btn-bg: #6366f1;
+}
+
+
+body{
+    background: var(--body-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+
+
+body.dark-mode{
+  --primary-color: #8b7dff;
+  --primary-hover: #7366ff;
+
+  --secondary-color: #1e293b;
+
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+
+  --text-color: #f8fafc;
+  --text-light: #94a3b8;
+
+  --white-color: #0f172a;
+  --border-color: #a6aeba;
+
+  /* Background */
+  --body-bg: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b
+  );
+
+  --card-bg: #1e293b;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*                         ALERT                        */
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+}
+
+.overlay.none{
+    display: none;
+}
+
+.alert-card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background-color: var(--card-bg);
+    padding: 40px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid var(--error-light);
+    z-index: 999;
+}
+
+.alert-card.none{
+    display: none;
+}
+
+.alert-card .wrong{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.wrong h2{
+    color: var(--error);
+    font-size: 2.5rem;
+}
+.error-icon{
+    height: 50px;
+    width: 50px;
+    background-color: var(--error);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.alert-card p{
+    font-size: 20px;
+    padding: 10px;
+    color: var(--error);
+}
+
+.alert-card button{
+    border: none;
+    outline: none;
+    padding: 10px 50px;
+    background-color: var(--error);
+    border-radius: 12px;
+    /* width: 100px; */
+    font-size: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/*                         TO DO LIST                        */
+
+.toDo-container{
+    position: relative;
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 800px;
+    padding: 0 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.title-card{
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.title-card h1{
+    color: var(--text-color);
+    padding: 6px;
+    font-size: 2.5rem;
+}
+
+.title-card h1 i{
+    color: var(--btn-bg);
+    padding-right: 10px;
+}
+
+.title-card p{
+    color: var(--btn-text);
+    max-width: 400px;
+}
+
+.input-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-box input{
+    /* width: 100%; */
+    flex-grow: 1;
+    padding: 15px;
+    outline: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: .9rem;
+}
+
+.input-box button{
+    padding: 15px;
+    outline: none;
+    border: 1px solid #e2e8f0;
+    background-color: var(--btn-bg);
+    color: var(--white-color);
+    text-transform: capitalize;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+.input-box button i{
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+.list-container{
+    width: 100%;
+    padding: 30px 0;
+
+}
+
+.list-container ul{
+    list-style: none;
+}
+
+.list-container li{
+    position: relative;
+    /* border: 1px solid var(--border-color); */
+    padding: 12px 8px 12px 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+
+.list-container li::before{
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    width: 28px;
+    height: 28px;
+    background-image: url('unchecked.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    content: '';
+    background-image: url('checked.png');
+}
+
+.list-container button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 5px;
+    transition: var(--transition);
+}
+
+.list-container button:hover{
+    color: var(--danger-color);
+    transform: translateY(-3px);
+}
+
+.toggle-theme{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    background: transparent;
+    border-radius: 20px;
+}
+
+.toggle-theme i{
+    font-size: 30px;
+    color: var(--text-color);
+}

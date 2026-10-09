@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do List</title>
+</head>
+
+<body>
+    <!--               ALERT               -->
+    <button class="toggle-theme"><i class="fa-solid fa-moon"></i></button>
+    <div class="overlay none"></div>
+    <div class="alert-card none" data-aos="flip-left">
+        <div class="wrong">
+            <div class="error-icon">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h2>task required</h2>
+        </div>
+        <!-- <h1>task required <i class="fa-solid fa-xmark"></i></h1> -->
+        <!-- <h2>please enter a task. <i class="fa-solid fa-list-check"></i></h2> -->
+        <p>ex: read book <i class="fa-solid fa-book-open"></i></p>
+        <button id="alert-btn">Ok</button>
+    </div>
+
+    <div class="toDo-container">
+        <div class="title-card">
+            <h1> to do list <i class="fa-solid fa-list-check"></i></h1>
+            <p>organize your tasks and get things done</p>
+        </div>
+        <div class="input-box">
+            <input type="text" id="input" placeholder="what do you need to do?">
+            <button id="btnAdd" onclick="addTask()"><i class="fa-solid fa-plus"></i> add task</button>
+        </div>
+        <div class="list-container">
+            <ul id="list">
+<!--                 
+                <li class="checked">task1 <button><i class="fa-solid fa-trash-can"></i></button> </li>
+                <li>task2 <button><i class="fa-solid fa-trash-can"></i></button></li>
+                <li>task3 <button><i class="fa-solid fa-trash-can"></i></button></li> -->
+            </ul>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
